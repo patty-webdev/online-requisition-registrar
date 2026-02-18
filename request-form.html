@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Form — SORS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <a href="index.html"><h5><i class="bi bi-mortarboard-fill"></i> SORS</h5></a>
+      <small>Student Portal</small>
+    </div>
+    <div class="sidebar-section-title">Main Menu</div>
+    <ul class="sidebar-menu">
+      <li><a href="student-dashboard.html"><i class="bi bi-grid-1x2"></i> Dashboard</a></li>
+      <li><a href="request-form.html" class="active"><i class="bi bi-file-earmark-plus"></i> New Request</a></li>
+      <li><a href="payment-upload.html"><i class="bi bi-credit-card"></i> Payment Upload</a></li>
+      <li><a href="clearance-tracking.html"><i class="bi bi-shield-check"></i> Clearance</a></li>
+    </ul>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section-title">Account</div>
+    <ul class="sidebar-menu">
+      <li><a href="#"><i class="bi bi-bell"></i> Notifications</a></li>
+      <li><a href="#"><i class="bi bi-person-circle"></i> My Profile</a></li>
+      <li><a href="login.html"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <div class="top-bar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn d-lg-none border-0" onclick="document.getElementById('sidebar').classList.toggle('show')">
+          <i class="bi bi-list fs-4"></i>
+        </button>
+        <h4><i class="bi bi-file-earmark-plus text-primary me-2"></i>New Request</h4>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <div class="avatar">JS</div>
+        <div class="d-none d-sm-block">
+          <div class="fw-bold" style="font-size:0.9rem">Juan Santos</div>
+          <small class="text-muted">BSIT — HED</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <!-- Requestor Type Toggle -->
+      <div class="bg-white rounded-4 border p-4 mb-4 animate-in">
+        <h6 class="fw-bold mb-3"><i class="bi bi-person-check text-primary me-2"></i>Requestor Type</h6>
+        <p class="text-muted mb-3" style="font-size:0.9rem">Are you requesting documents for the first time or have you requested before?</p>
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <div class="card-custom text-center" id="type1st" onclick="selectType('1st')" style="cursor:pointer;border:2px solid var(--primary);background:var(--primary-light)">
+              <i class="bi bi-1-circle-fill text-primary fs-2 mb-2 d-block"></i>
+              <h6 class="fw-bold">1st-Time Requestor</h6>
+              <small class="text-muted">Requires clearance from departments</small>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card-custom text-center" id="type2nd" onclick="selectType('2nd')" style="cursor:pointer;">
+              <i class="bi bi-2-circle fs-2 mb-2 d-block" style="color:var(--gray-400)"></i>
+              <h6 class="fw-bold">2nd-Time Requestor</h6>
+              <small class="text-muted">No clearance needed, faster processing</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Request Form -->
+        <div class="col-lg-7">
+          <div class="bg-white rounded-4 border p-4 animate-in delay-1">
+            <h6 class="fw-bold mb-3"><i class="bi bi-pencil-square text-primary me-2"></i>Request Details</h6>
+            <form class="form-custom" onsubmit="handleSubmitRequest(event)">
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-control" value="Juan Santos" required>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label">Student ID</label>
+                  <input type="text" class="form-control" value="2024-00123" required>
+                </div>
+              </div>
+              <div class="row g-3 mt-1">
+                <div class="col-sm-6">
+                  <label class="form-label">Level</label>
+                  <select class="form-select" required>
+                    <option selected>HED (Higher Education)</option>
+                    <option>Unit Earner</option>
+                    <option>Masteral</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label">Course</label>
+                  <select class="form-select" required>
+                    <option selected>BSIT</option>
+                    <option>BSCS</option>
+                    <option>BSBA</option>
+                    <option>BSEd</option>
+                    <option>BSHRM</option>
+                    <option>BSN</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <label class="form-label">Select Documents to Request</label>
+                <div class="border rounded-3 p-3" style="background:var(--gray-100)">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input doc-check" type="checkbox" value="200" id="doc1" data-name="Transcript of Records" onchange="updateQuotation()">
+                    <label class="form-check-label" for="doc1">
+                      Transcript of Records <span class="text-primary fw-bold ms-2">₱200.00</span>
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input doc-check" type="checkbox" value="150" id="doc2" data-name="Certificate of Enrollment" onchange="updateQuotation()">
+                    <label class="form-check-label" for="doc2">
+                      Certificate of Enrollment <span class="text-primary fw-bold ms-2">₱150.00</span>
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input doc-check" type="checkbox" value="250" id="doc3" data-name="Diploma" onchange="updateQuotation()">
+                    <label class="form-check-label" for="doc3">
+                      Diploma <span class="text-primary fw-bold ms-2">₱250.00</span>
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input doc-check" type="checkbox" value="100" id="doc4" data-name="Certificate of Good Moral" onchange="updateQuotation()">
+                    <label class="form-check-label" for="doc4">
+                      Certificate of Good Moral <span class="text-primary fw-bold ms-2">₱100.00</span>
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input doc-check" type="checkbox" value="150" id="doc5" data-name="Honorable Dismissal" onchange="updateQuotation()">
+                    <label class="form-check-label" for="doc5">
+                      Honorable Dismissal <span class="text-primary fw-bold ms-2">₱150.00</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input doc-check" type="checkbox" value="120" id="doc6" data-name="Certificate of Units Earned" onchange="updateQuotation()">
+                    <label class="form-check-label" for="doc6">
+                      Certificate of Units Earned <span class="text-primary fw-bold ms-2">₱120.00</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <label class="form-label">Purpose of Request</label>
+                <select class="form-select" required>
+                  <option value="">Select Purpose</option>
+                  <option>Employment Application</option>
+                  <option>Transfer to Another School</option>
+                  <option>Board Exam Requirement</option>
+                  <option>Scholarship Application</option>
+                  <option>Personal Record</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="mt-3">
+                <label class="form-label">Additional Notes (Optional)</label>
+                <textarea class="form-control" rows="3" placeholder="Any special instructions or remarks..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary-custom w-100 justify-content-center mt-4">
+                <i class="bi bi-send"></i> Submit Request & Proceed to Payment
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Quotation Sidebar -->
+        <div class="col-lg-5">
+          <div class="animate-in delay-2" style="position:sticky;top:100px">
+            <!-- Quotation Card -->
+            <div class="quotation-card mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="q-label">Automatic Quotation</div>
+                <i class="bi bi-receipt fs-4" style="opacity:0.7"></i>
+              </div>
+              <div class="q-amount" id="totalAmount">₱0.00</div>
+              <hr style="border-color:rgba(255,255,255,0.2)">
+              <div id="quotationItems" style="font-size:0.88rem;opacity:0.9">
+                <p style="opacity:0.7;font-size:0.85rem">Select documents to see quotation</p>
+              </div>
+            </div>
+
+            <!-- Info Card -->
+            <div class="bg-white rounded-4 border p-4">
+              <h6 class="fw-bold mb-3"><i class="bi bi-info-circle text-primary me-2"></i>Important Notes</h6>
+              <ul style="font-size:0.88rem;color:var(--gray-600);padding-left:20px" class="mb-0">
+                <li class="mb-2">Quotation is calculated automatically based on selected documents.</li>
+                <li class="mb-2">After submitting, you'll be redirected to upload your payment receipt.</li>
+                <li class="mb-2"><strong>1st-time requestors</strong> will need to complete departmental clearance.</li>
+                <li class="mb-2"><strong>2nd-time requestors</strong> skip clearance and go directly to registrar processing.</li>
+                <li>Processing typically takes 1–3 business days after payment verification.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function selectType(type) {
+      const el1 = document.getElementById('type1st');
+      const el2 = document.getElementById('type2nd');
+      if (type === '1st') {
+        el1.style.border = '2px solid var(--primary)';
+        el1.style.background = 'var(--primary-light)';
+        el2.style.border = '1px solid var(--gray-200)';
+        el2.style.background = '#fff';
+      } else {
+        el2.style.border = '2px solid var(--primary)';
+        el2.style.background = 'var(--primary-light)';
+        el1.style.border = '1px solid var(--gray-200)';
+        el1.style.background = '#fff';
+      }
+    }
+
+    function updateQuotation() {
+      const checks = document.querySelectorAll('.doc-check:checked');
+      let total = 0;
+      let html = '';
+      checks.forEach(c => {
+        const price = parseInt(c.value);
+        total += price;
+        html += `<div class="d-flex justify-content-between mb-1">
+          <span>${c.dataset.name}</span>
+          <span>₱${price.toFixed(2)}</span>
+        </div>`;
+      });
+      document.getElementById('totalAmount').textContent = `₱${total.toFixed(2)}`;
+      document.getElementById('quotationItems').innerHTML = html || '<p style="opacity:0.7;font-size:0.85rem">Select documents to see quotation</p>';
+    }
+
+    function handleSubmitRequest(e) {
+      e.preventDefault();
+      window.location.href = 'payment-upload.html';
+    }
+  </script>
+</body>
+</html>

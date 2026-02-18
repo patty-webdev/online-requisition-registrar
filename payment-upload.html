@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Upload — SORS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <a href="index.html"><h5><i class="bi bi-mortarboard-fill"></i> SORS</h5></a>
+      <small>Student Portal</small>
+    </div>
+    <div class="sidebar-section-title">Main Menu</div>
+    <ul class="sidebar-menu">
+      <li><a href="student-dashboard.html"><i class="bi bi-grid-1x2"></i> Dashboard</a></li>
+      <li><a href="request-form.html"><i class="bi bi-file-earmark-plus"></i> New Request</a></li>
+      <li><a href="payment-upload.html" class="active"><i class="bi bi-credit-card"></i> Payment Upload</a></li>
+      <li><a href="clearance-tracking.html"><i class="bi bi-shield-check"></i> Clearance</a></li>
+    </ul>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section-title">Account</div>
+    <ul class="sidebar-menu">
+      <li><a href="#"><i class="bi bi-bell"></i> Notifications</a></li>
+      <li><a href="#"><i class="bi bi-person-circle"></i> My Profile</a></li>
+      <li><a href="login.html"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <div class="top-bar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn d-lg-none border-0" onclick="document.getElementById('sidebar').classList.toggle('show')">
+          <i class="bi bi-list fs-4"></i>
+        </button>
+        <h4><i class="bi bi-credit-card text-primary me-2"></i>Payment Upload</h4>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <div class="avatar">JS</div>
+        <div class="d-none d-sm-block">
+          <div class="fw-bold" style="font-size:0.9rem">Juan Santos</div>
+          <small class="text-muted">BSIT — HED</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <!-- Progress -->
+      <div class="bg-white p-4 rounded-4 border mb-4 animate-in">
+        <div class="progress-tracker">
+          <div class="progress-step completed">
+            <div class="step-circle"><i class="bi bi-check"></i></div>
+            <div class="step-label">Form</div>
+          </div>
+          <div class="progress-line completed"></div>
+          <div class="progress-step active">
+            <div class="step-circle">2</div>
+            <div class="step-label">Payment</div>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step">
+            <div class="step-circle">3</div>
+            <div class="step-label">Finance</div>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step">
+            <div class="step-circle">4</div>
+            <div class="step-label">Clearance</div>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step">
+            <div class="step-circle">5</div>
+            <div class="step-label">Registrar</div>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step">
+            <div class="step-circle">6</div>
+            <div class="step-label">Completed</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Payment Form -->
+        <div class="col-lg-7">
+          <div class="bg-white rounded-4 border p-4 animate-in delay-1">
+            <h6 class="fw-bold mb-3"><i class="bi bi-upload text-primary me-2"></i>Upload Payment Receipt</h6>
+            
+            <!-- Payment Method -->
+            <div class="mb-4">
+              <label class="form-label fw-bold">Payment Method</label>
+              <div class="row g-3">
+                <div class="col-6">
+                  <div class="card-custom text-center p-3" id="methodGcash" onclick="selectMethod('gcash')" style="cursor:pointer;border:2px solid var(--primary);background:var(--primary-light)">
+                    <i class="bi bi-phone fs-3 text-primary d-block mb-1"></i>
+                    <div class="fw-bold" style="font-size:0.9rem">GCash</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="card-custom text-center p-3" id="methodBank" onclick="selectMethod('bank')" style="cursor:pointer;">
+                    <i class="bi bi-bank fs-3 d-block mb-1" style="color:var(--gray-400)"></i>
+                    <div class="fw-bold" style="font-size:0.9rem">Bank Transfer</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Details -->
+            <div class="form-custom mb-4" id="gcashDetails">
+              <div class="alert-custom mb-3" style="background:rgba(220,38,38,0.08);color:var(--primary)">
+                <i class="bi bi-info-circle"></i>
+                <div>
+                  <strong>GCash Payment Details:</strong><br>
+                  Send to: <strong>09XX-XXX-XXXX</strong> — School Finance Office<br>
+                  Amount: <strong>₱350.00</strong> — Reference: <strong>REQ-2026-0042</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-custom">
+              <label class="form-label fw-bold">Reference Number</label>
+              <input type="text" class="form-control mb-3" placeholder="e.g. 1234567890123">
+              
+              <label class="form-label fw-bold">Amount Paid</label>
+              <input type="number" class="form-control mb-3" placeholder="350.00" value="350">
+
+              <label class="form-label fw-bold">Upload Receipt Screenshot</label>
+              <div class="upload-area mb-3" onclick="document.getElementById('fileInput').click()">
+                <i class="bi bi-cloud-arrow-up d-block"></i>
+                <div class="fw-semibold mb-1">Click to upload receipt</div>
+                <small class="text-muted">JPG, PNG, or PDF — Max 5MB</small>
+                <input type="file" id="fileInput" class="d-none" accept="image/*,.pdf" onchange="previewFile(this)">
+              </div>
+
+              <!-- Preview -->
+              <div id="filePreview" class="d-none mb-3">
+                <div class="receipt-preview border p-2 rounded-3">
+                  <div class="d-flex align-items-center gap-3">
+                    <i class="bi bi-file-earmark-image fs-3 text-primary"></i>
+                    <div>
+                      <div class="fw-semibold" style="font-size:0.9rem" id="fileName">receipt.jpg</div>
+                      <small class="text-muted" id="fileSize">2.3 MB</small>
+                    </div>
+                    <button class="btn btn-sm text-danger ms-auto" onclick="removeFile()"><i class="bi bi-x-circle"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn-primary-custom w-100 justify-content-center" onclick="submitPayment()">
+                <i class="bi bi-send"></i> Submit Payment for Verification
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Summary -->
+        <div class="col-lg-5">
+          <div style="position:sticky;top:100px">
+            <!-- Quotation Reminder -->
+            <div class="quotation-card mb-4 animate-in delay-2">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <div class="q-label">Amount Due</div>
+                <span class="badge bg-white text-primary fw-bold" style="font-size:0.8rem">REQ-2026-0042</span>
+              </div>
+              <div class="q-amount">₱350.00</div>
+              <hr style="border-color:rgba(255,255,255,0.2)">
+              <div class="d-flex justify-content-between" style="font-size:0.88rem;opacity:0.9">
+                <span>Transcript of Records</span>
+                <span>₱200.00</span>
+              </div>
+              <div class="d-flex justify-content-between" style="font-size:0.88rem;opacity:0.9">
+                <span>Certificate of Enrollment</span>
+                <span>₱150.00</span>
+              </div>
+            </div>
+
+            <!-- Payment Status -->
+            <div class="bg-white rounded-4 border p-4 mb-4 animate-in delay-3">
+              <h6 class="fw-bold mb-3"><i class="bi bi-clock-history text-warning me-2"></i>Payment Status</h6>
+              <div class="d-flex align-items-center gap-3 p-3 rounded-3" style="background:rgba(245,158,11,0.1)">
+                <i class="bi bi-hourglass-split fs-4" style="color:#d97706"></i>
+                <div>
+                  <div class="fw-bold" style="font-size:0.9rem;color:#b45309">Awaiting Upload</div>
+                  <small class="text-muted">Upload your receipt to proceed</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Help -->
+            <div class="bg-white rounded-4 border p-4 animate-in delay-4">
+              <h6 class="fw-bold mb-3"><i class="bi bi-question-circle text-info me-2"></i>Need Help?</h6>
+              <ul style="font-size:0.85rem;color:var(--gray-600);padding-left:18px" class="mb-0">
+                <li class="mb-2">Make sure the receipt shows the correct amount and reference number.</li>
+                <li class="mb-2">Upload a clear, readable image of the receipt.</li>
+                <li class="mb-2">Finance will verify within 1–2 business days.</li>
+                <li>Contact <a href="mailto:finance@school.edu.ph" class="text-primary fw-semibold">finance@school.edu.ph</a> for issues.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function selectMethod(method) {
+      const gcash = document.getElementById('methodGcash');
+      const bank = document.getElementById('methodBank');
+      if (method === 'gcash') {
+        gcash.style.border = '2px solid var(--primary)';
+        gcash.style.background = 'var(--primary-light)';
+        bank.style.border = '1px solid var(--gray-200)';
+        bank.style.background = '#fff';
+      } else {
+        bank.style.border = '2px solid var(--primary)';
+        bank.style.background = 'var(--primary-light)';
+        gcash.style.border = '1px solid var(--gray-200)';
+        gcash.style.background = '#fff';
+      }
+    }
+
+    function previewFile(input) {
+      if (input.files && input.files[0]) {
+        document.getElementById('filePreview').classList.remove('d-none');
+        document.getElementById('fileName').textContent = input.files[0].name;
+        document.getElementById('fileSize').textContent = (input.files[0].size / 1024 / 1024).toFixed(2) + ' MB';
+      }
+    }
+
+    function removeFile() {
+      document.getElementById('fileInput').value = '';
+      document.getElementById('filePreview').classList.add('d-none');
+    }
+
+    function submitPayment() {
+      alert('Payment receipt submitted! Waiting for finance verification.');
+      window.location.href = 'student-dashboard.html';
+    }
+  </script>
+</body>
+</html>

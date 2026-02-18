@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clearance Tracking — SORS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <a href="index.html"><h5><i class="bi bi-mortarboard-fill"></i> SORS</h5></a>
+      <small>Student Portal</small>
+    </div>
+    <div class="sidebar-section-title">Main Menu</div>
+    <ul class="sidebar-menu">
+      <li><a href="student-dashboard.html"><i class="bi bi-grid-1x2"></i> Dashboard</a></li>
+      <li><a href="request-form.html"><i class="bi bi-file-earmark-plus"></i> New Request</a></li>
+      <li><a href="payment-upload.html"><i class="bi bi-credit-card"></i> Payment Upload</a></li>
+      <li><a href="clearance-tracking.html" class="active"><i class="bi bi-shield-check"></i> Clearance</a></li>
+    </ul>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section-title">Account</div>
+    <ul class="sidebar-menu">
+      <li><a href="#"><i class="bi bi-bell"></i> Notifications</a></li>
+      <li><a href="#"><i class="bi bi-person-circle"></i> My Profile</a></li>
+      <li><a href="login.html"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <div class="top-bar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn d-lg-none border-0" onclick="document.getElementById('sidebar').classList.toggle('show')">
+          <i class="bi bi-list fs-4"></i>
+        </button>
+        <h4><i class="bi bi-shield-check text-primary me-2"></i>Clearance Tracking</h4>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <div class="avatar">JS</div>
+        <div class="d-none d-sm-block">
+          <div class="fw-bold" style="font-size:0.9rem">Juan Santos</div>
+          <small class="text-muted">BSIT — HED</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <!-- Progress -->
+      <div class="bg-white p-4 rounded-4 border mb-4 animate-in">
+        <div class="progress-tracker">
+          <div class="progress-step completed">
+            <div class="step-circle"><i class="bi bi-check"></i></div>
+            <div class="step-label">Form</div>
+          </div>
+          <div class="progress-line completed"></div>
+          <div class="progress-step completed">
+            <div class="step-circle"><i class="bi bi-check"></i></div>
+            <div class="step-label">Payment</div>
+          </div>
+          <div class="progress-line completed"></div>
+          <div class="progress-step completed">
+            <div class="step-circle"><i class="bi bi-check"></i></div>
+            <div class="step-label">Finance</div>
+          </div>
+          <div class="progress-line completed"></div>
+          <div class="progress-step active">
+            <div class="step-circle">4</div>
+            <div class="step-label">Clearance</div>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step">
+            <div class="step-circle">5</div>
+            <div class="step-label">Registrar</div>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step">
+            <div class="step-circle">6</div>
+            <div class="step-label">Completed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clearance Overview -->
+      <div class="row g-4 mb-4">
+        <!-- Percentage Circle -->
+        <div class="col-lg-4">
+          <div class="bg-white rounded-4 border p-4 text-center animate-in delay-1">
+            <h6 class="fw-bold mb-3"><i class="bi bi-pie-chart text-primary me-2"></i>Clearance Progress</h6>
+            <div class="clearance-percent" style="--percent: 67">
+              <div class="clearance-percent-inner">67%</div>
+            </div>
+            <p class="text-muted mb-0" style="font-size:0.88rem"><strong>4 of 6</strong> departments approved</p>
+          </div>
+        </div>
+
+        <!-- Summary Stats -->
+        <div class="col-lg-8">
+          <div class="row g-3 animate-in delay-2">
+            <div class="col-4">
+              <div class="stat-card text-center">
+                <div class="stat-number" style="color:var(--success);font-size:1.5rem">4</div>
+                <div class="stat-label"><i class="bi bi-check-circle text-success me-1"></i>Approved</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="stat-card text-center">
+                <div class="stat-number" style="color:#d97706;font-size:1.5rem">1</div>
+                <div class="stat-label"><i class="bi bi-hourglass-split me-1" style="color:#d97706"></i>Pending</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="stat-card text-center">
+                <div class="stat-number" style="color:var(--danger);font-size:1.5rem">1</div>
+                <div class="stat-label"><i class="bi bi-x-circle text-danger me-1"></i>Rejected</div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-4 border p-4 mt-3">
+            <div class="alert-custom" style="background:rgba(220,38,38,0.08);color:var(--primary)">
+              <i class="bi bi-info-circle"></i>
+              <span><strong>Note:</strong> Clearance is required for 1st-time requestors. All departments must approve before proceeding to the registrar.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Department Cards Grid -->
+      <h6 class="fw-bold mb-3"><i class="bi bi-building text-primary me-2"></i>Department Status</h6>
+      <div class="row g-4 animate-in delay-3">
+        <!-- Approved -->
+        <div class="col-sm-6 col-lg-4">
+          <div class="clearance-card approved">
+            <div class="dept-icon" style="background:rgba(22,163,74,0.12);color:var(--success)">
+              <i class="bi bi-book"></i>
+            </div>
+            <h6 class="fw-bold">Library</h6>
+            <span class="badge-custom badge-approved"><i class="bi bi-check-circle me-1"></i>Approved</span>
+            <div class="mt-2"><small class="text-muted">Feb 16, 2026</small></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="clearance-card approved">
+            <div class="dept-icon" style="background:rgba(22,163,74,0.12);color:var(--success)">
+              <i class="bi bi-clipboard-data"></i>
+            </div>
+            <h6 class="fw-bold">Dean's Office</h6>
+            <span class="badge-custom badge-approved"><i class="bi bi-check-circle me-1"></i>Approved</span>
+            <div class="mt-2"><small class="text-muted">Feb 16, 2026</small></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="clearance-card approved">
+            <div class="dept-icon" style="background:rgba(22,163,74,0.12);color:var(--success)">
+              <i class="bi bi-pc-display"></i>
+            </div>
+            <h6 class="fw-bold">Computer Lab</h6>
+            <span class="badge-custom badge-approved"><i class="bi bi-check-circle me-1"></i>Approved</span>
+            <div class="mt-2"><small class="text-muted">Feb 17, 2026</small></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="clearance-card approved">
+            <div class="dept-icon" style="background:rgba(22,163,74,0.12);color:var(--success)">
+              <i class="bi bi-person-workspace"></i>
+            </div>
+            <h6 class="fw-bold">Student Affairs</h6>
+            <span class="badge-custom badge-approved"><i class="bi bi-check-circle me-1"></i>Approved</span>
+            <div class="mt-2"><small class="text-muted">Feb 17, 2026</small></div>
+          </div>
+        </div>
+
+        <!-- Pending -->
+        <div class="col-sm-6 col-lg-4">
+          <div class="clearance-card pending">
+            <div class="dept-icon" style="background:rgba(245,158,11,0.12);color:#d97706">
+              <i class="bi bi-cash-coin"></i>
+            </div>
+            <h6 class="fw-bold">Accounting</h6>
+            <span class="badge-custom badge-pending"><i class="bi bi-hourglass-split me-1"></i>Pending</span>
+            <div class="mt-2"><small class="text-muted">Awaiting review</small></div>
+          </div>
+        </div>
+
+        <!-- Rejected -->
+        <div class="col-sm-6 col-lg-4">
+          <div class="clearance-card rejected">
+            <div class="dept-icon" style="background:rgba(220,38,38,0.1);color:var(--danger)">
+              <i class="bi bi-journal-bookmark"></i>
+            </div>
+            <h6 class="fw-bold">Guidance Office</h6>
+            <span class="badge-custom badge-rejected"><i class="bi bi-x-circle me-1"></i>Rejected</span>
+            <div class="mt-2"><small class="text-danger" style="font-size:0.82rem">Reason: Missing exit interview form</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action for rejected -->
+      <div class="bg-white rounded-4 border p-4 mt-4 animate-in delay-4">
+        <h6 class="fw-bold mb-3"><i class="bi bi-exclamation-triangle text-danger me-2"></i>Action Required</h6>
+        <div class="d-flex align-items-start gap-3 p-3 rounded-3" style="background:rgba(220,38,38,0.05)">
+          <i class="bi bi-x-circle-fill text-danger fs-4"></i>
+          <div>
+            <div class="fw-bold" style="font-size:0.95rem">Guidance Office — Clearance Rejected</div>
+            <p class="text-muted mb-2" style="font-size:0.88rem">Reason: Missing exit interview form. Please visit the Guidance Office to complete the form and resubmit.</p>
+            <a href="department-clearance.html" class="btn-primary-custom btn-sm-custom">
+              <i class="bi bi-building"></i> View Department Panel
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

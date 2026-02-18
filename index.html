@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Online Requisition System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-mortarboard-fill"></i> SORS
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#workflow">How It Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="#roles">User Roles</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a href="login.html" class="btn-outline-custom btn-sm-custom">Login</a>
+          <a href="register.html" class="btn-primary-custom btn-sm-custom">Register</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 animate-in">
+          <div class="hero-badge">
+            <i class="bi bi-lightning-fill"></i> Fast & Secure Document Requests
+          </div>
+          <h1 class="hero-title">
+            Request School Documents <span>Online</span> Anytime
+          </h1>
+          <p class="hero-subtitle">
+            Skip the long lines. Submit document requests, upload payments, track clearance progress, 
+            and download your approved documents — all from one platform.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="register.html" class="btn-primary-custom">
+              <i class="bi bi-rocket-takeoff"></i> Get Started
+            </a>
+            <a href="#workflow" class="btn-outline-custom">
+              <i class="bi bi-play-circle"></i> How It Works
+            </a>
+          </div>
+          <div class="d-flex align-items-center gap-4 mt-4">
+            <div class="d-flex">
+              <div class="avatar" style="z-index:3">JD</div>
+              <div class="avatar" style="margin-left:-10px;z-index:2;background:var(--secondary)">MR</div>
+              <div class="avatar" style="margin-left:-10px;z-index:1;background:var(--accent)">KS</div>
+            </div>
+            <small class="text-muted"><strong>500+</strong> students already using SORS</small>
+          </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block">
+          <div class="hero-illustration animate-in delay-2">
+            <div class="hero-card">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="avatar">JS</div>
+                <div>
+                  <div class="fw-bold" style="font-size:0.95rem">Juan Santos</div>
+                  <small class="text-muted">BSIT — HED Level</small>
+                </div>
+                <span class="badge-custom badge-processing ms-auto">In Progress</span>
+              </div>
+              <div style="background:var(--gray-100);border-radius:8px;padding:16px;margin-bottom:14px;">
+                <small class="text-muted d-block mb-1">Requested Documents</small>
+                <div class="fw-semibold" style="font-size:0.9rem">
+                  <i class="bi bi-file-earmark-text text-primary me-1"></i> Transcript of Records
+                </div>
+                <div class="fw-semibold" style="font-size:0.9rem">
+                  <i class="bi bi-file-earmark-text text-primary me-1"></i> Certificate of Enrollment
+                </div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <small class="text-muted">Total Amount</small>
+                  <div class="fw-bold text-primary" style="font-size:1.3rem">₱350.00</div>
+                </div>
+                <a href="student-dashboard.html" class="btn-primary-custom btn-sm-custom">
+                  Track Request <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES SECTION ===== -->
+  <section id="features" class="section-padding">
+    <div class="container">
+      <h2 class="section-title animate-in">Everything You Need</h2>
+      <p class="section-subtitle animate-in delay-1">
+        A complete system for requesting, processing, and releasing school documents digitally.
+      </p>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 animate-in delay-1">
+          <a href="request-form.html" class="d-block h-100">
+            <div class="card-custom">
+              <div class="card-icon blue"><i class="bi bi-file-earmark-plus"></i></div>
+              <h5>Online Request Form</h5>
+              <p>Submit document requests anytime. Choose your level, course, and documents — get an automatic quotation instantly.</p>
+              <span class="text-primary fw-semibold" style="font-size:0.85rem">Try the form <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-in delay-2">
+          <a href="payment-upload.html" class="d-block h-100">
+            <div class="card-custom">
+              <div class="card-icon green"><i class="bi bi-credit-card-2-front"></i></div>
+              <h5>Easy Payment Upload</h5>
+              <p>Upload your GCash or bank payment receipt. Finance team verifies and approves your payment quickly.</p>
+              <span class="text-primary fw-semibold" style="font-size:0.85rem">See payment page <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-in delay-3">
+          <a href="clearance-tracking.html" class="d-block h-100">
+            <div class="card-custom">
+              <div class="card-icon purple"><i class="bi bi-shield-check"></i></div>
+              <h5>Clearance Tracking</h5>
+              <p>Track your clearance progress per department. See real-time approval status and overall percentage.</p>
+              <span class="text-primary fw-semibold" style="font-size:0.85rem">View clearance <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-in delay-1">
+          <a href="finance-dashboard.html" class="d-block h-100">
+            <div class="card-custom">
+              <div class="card-icon orange"><i class="bi bi-bank"></i></div>
+              <h5>Finance Verification</h5>
+              <p>Finance office reviews and verifies all payments. Approve or reject with a single click.</p>
+              <span class="text-primary fw-semibold" style="font-size:0.85rem">Finance panel <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-in delay-2">
+          <a href="department-clearance.html" class="d-block h-100">
+            <div class="card-custom">
+              <div class="card-icon pink"><i class="bi bi-building-check"></i></div>
+              <h5>Department Approvals</h5>
+              <p>Each department can approve or reject student clearance independently. All tracked in real time.</p>
+              <span class="text-primary fw-semibold" style="font-size:0.85rem">Department view <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4 animate-in delay-3">
+          <a href="registrar-dashboard.html" class="d-block h-100">
+            <div class="card-custom">
+              <div class="card-icon red"><i class="bi bi-file-earmark-arrow-down"></i></div>
+              <h5>Registrar Release</h5>
+              <p>Registrar uploads final PDF documents. Students download approved documents from their dashboard.</p>
+              <span class="text-primary fw-semibold" style="font-size:0.85rem">Registrar panel <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORKFLOW SECTION ===== -->
+  <section id="workflow" class="section-padding" style="background: #fff;">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">Simple step-by-step process from request to document release.</p>
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <!-- 1st time flow -->
+          <h5 class="fw-bold mb-4 text-center">
+            <span class="badge-custom badge-processing me-2">1st-Time Requestor</span>
+          </h5>
+          <div class="workflow-step animate-in delay-1">
+            <div class="wf-icon"><i class="bi bi-pencil-square"></i></div>
+            <div>
+              <h6 class="fw-bold mb-1">Submit Request</h6>
+              <p class="text-muted" style="font-size:0.9rem">Fill out the request form with your details and select documents needed.</p>
+              <a href="request-form.html" class="text-primary fw-semibold" style="font-size:0.85rem">Go to form <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="workflow-step animate-in delay-2">
+            <div class="wf-icon" style="background:rgba(22,163,74,0.12);color:var(--success)"><i class="bi bi-upload"></i></div>
+            <div>
+              <h6 class="fw-bold mb-1">Upload Payment</h6>
+              <p class="text-muted" style="font-size:0.9rem">Pay via GCash or bank transfer, then upload your receipt for verification.</p>
+              <a href="payment-upload.html" class="text-primary fw-semibold" style="font-size:0.85rem">Payment page <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="workflow-step animate-in delay-3">
+            <div class="wf-icon" style="background:rgba(245,158,11,0.12);color:#d97706"><i class="bi bi-bank"></i></div>
+            <div>
+              <h6 class="fw-bold mb-1">Finance Verification</h6>
+              <p class="text-muted" style="font-size:0.9rem">Finance office reviews and approves your payment receipt.</p>
+              <a href="finance-dashboard.html" class="text-primary fw-semibold" style="font-size:0.85rem">Finance view <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="workflow-step animate-in delay-4">
+            <div class="wf-icon" style="background:rgba(153,27,27,0.1);color:var(--secondary)"><i class="bi bi-shield-check"></i></div>
+            <div>
+              <h6 class="fw-bold mb-1">Department Clearance</h6>
+              <p class="text-muted" style="font-size:0.9rem">Applicable departments approve your clearance. Track progress in real-time.</p>
+              <a href="clearance-tracking.html" class="text-primary fw-semibold" style="font-size:0.85rem">Track clearance <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="workflow-step animate-in delay-4">
+            <div class="wf-icon" style="background:rgba(225,29,72,0.1);color:var(--accent)"><i class="bi bi-file-earmark-arrow-down"></i></div>
+            <div>
+              <h6 class="fw-bold mb-1">Registrar Processing & Release</h6>
+              <p class="text-muted" style="font-size:0.9rem">Registrar prepares and uploads your final document. Download it from your dashboard!</p>
+              <a href="student-dashboard.html" class="text-primary fw-semibold" style="font-size:0.85rem">Your dashboard <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ROLES SECTION ===== -->
+  <section id="roles" class="section-padding">
+    <div class="container">
+      <h2 class="section-title">User Roles & Dashboards</h2>
+      <p class="section-subtitle">Each user type has a dedicated dashboard tailored to their workflow.</p>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-3 animate-in delay-1">
+          <a href="student-dashboard.html" class="d-block h-100">
+            <div class="card-custom text-center">
+              <div class="card-icon blue mx-auto"><i class="bi bi-person-badge"></i></div>
+              <h5>Student</h5>
+              <p>Submit requests, upload payments, track progress, download documents.</p>
+              <span class="text-primary fw-semibold" style="font-size:0.85rem">Open Dashboard <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 animate-in delay-2">
+          <a href="finance-dashboard.html" class="d-block h-100">
+            <div class="card-custom text-center">
+              <div class="card-icon orange mx-auto"><i class="bi bi-cash-coin"></i></div>
+              <h5>Finance</h5>
+              <p>Review payments, verify receipts, approve or reject transactions.</p>
+              <span class="text-primary fw-semibold" style="font-size:0.85rem">Open Dashboard <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 animate-in delay-3">
+          <a href="department-clearance.html" class="d-block h-100">
+            <div class="card-custom text-center">
+              <div class="card-icon purple mx-auto"><i class="bi bi-building"></i></div>
+              <h5>Department</h5>
+              <p>Manage student clearance requests. Approve or flag issues per department.</p>
+              <span class="text-primary fw-semibold" style="font-size:0.85rem">Open Dashboard <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 animate-in delay-4">
+          <a href="registrar-dashboard.html" class="d-block h-100">
+            <div class="card-custom text-center">
+              <div class="card-icon red mx-auto"><i class="bi bi-patch-check"></i></div>
+              <h5>Registrar</h5>
+              <p>Process final requests, upload documents, mark as completed.</p>
+              <span class="text-primary fw-semibold" style="font-size:0.85rem">Open Dashboard <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="section-padding" style="background:#fff;">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-number text-primary">500+</div>
+            <div class="stat-label">Students Served</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-number" style="color:var(--success)">1,200+</div>
+            <div class="stat-label">Documents Released</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-number" style="color:var(--secondary)">98%</div>
+            <div class="stat-label">Approval Rate</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card">
+            <div class="stat-number" style="color:var(--accent)">24hrs</div>
+            <div class="stat-label">Avg. Processing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h6><i class="bi bi-mortarboard-fill me-2"></i>SORS</h6>
+          <p style="font-size:0.9rem">School Online Requisition System — Making document requests fast, secure, and accessible for every student.</p>
+        </div>
+        <div class="col-lg-2">
+          <h6>Quick Links</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html">Home</a></li>
+            <li class="mb-2"><a href="login.html">Login</a></li>
+            <li class="mb-2"><a href="register.html">Register</a></li>
+            <li class="mb-2"><a href="#features">Features</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h6>Dashboards</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="student-dashboard.html">Student Portal</a></li>
+            <li class="mb-2"><a href="finance-dashboard.html">Finance Panel</a></li>
+            <li class="mb-2"><a href="department-clearance.html">Department Panel</a></li>
+            <li class="mb-2"><a href="registrar-dashboard.html">Registrar Panel</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h6>Contact</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-envelope me-2"></i> registrar@school.edu.ph</li>
+            <li class="mb-2"><i class="bi bi-telephone me-2"></i> (02) 8123-4567</li>
+            <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> Main Campus, Metro Manila</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 School Online Requisition System. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

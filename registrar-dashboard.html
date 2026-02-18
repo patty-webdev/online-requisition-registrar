@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Dashboard — SORS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <a href="index.html"><h5><i class="bi bi-mortarboard-fill"></i> SORS</h5></a>
+      <small>Registrar Panel</small>
+    </div>
+    <div class="sidebar-section-title">Registrar</div>
+    <ul class="sidebar-menu">
+      <li><a href="registrar-dashboard.html" class="active"><i class="bi bi-grid-1x2"></i> Dashboard</a></li>
+      <li><a href="#readySection"><i class="bi bi-file-earmark-check"></i> Ready to Process <span class="notif-dot"></span></a></li>
+      <li><a href="#completedSection"><i class="bi bi-check2-all"></i> Completed</a></li>
+    </ul>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section-title">Navigation</div>
+    <ul class="sidebar-menu">
+      <li><a href="student-dashboard.html"><i class="bi bi-person"></i> Student View</a></li>
+      <li><a href="finance-dashboard.html"><i class="bi bi-bank"></i> Finance View</a></li>
+      <li><a href="department-clearance.html"><i class="bi bi-building"></i> Department View</a></li>
+    </ul>
+    <div class="sidebar-divider"></div>
+    <ul class="sidebar-menu">
+      <li><a href="login.html"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <div class="top-bar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn d-lg-none border-0" onclick="document.getElementById('sidebar').classList.toggle('show')">
+          <i class="bi bi-list fs-4"></i>
+        </button>
+        <h4><i class="bi bi-patch-check text-primary me-2"></i>Registrar Dashboard</h4>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="#" class="position-relative">
+          <i class="bi bi-bell fs-5 text-muted"></i>
+          <span class="notif-dot" style="position:absolute;top:0;right:-2px"></span>
+        </a>
+        <div class="avatar" style="background:var(--danger)">RG</div>
+        <div class="d-none d-sm-block">
+          <div class="fw-bold" style="font-size:0.9rem">Registrar Office</div>
+          <small class="text-muted">Document Processing</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <!-- Stats -->
+      <div class="row g-4 mb-4 animate-in">
+        <div class="col-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(220,38,38,0.1);color:var(--primary)">
+              <i class="bi bi-file-earmark-check"></i>
+            </div>
+            <div class="stat-number" style="color:var(--primary)">6</div>
+            <div class="stat-label">Ready to Process</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(245,158,11,0.12);color:#d97706">
+              <i class="bi bi-gear"></i>
+            </div>
+            <div class="stat-number" style="color:#d97706">3</div>
+            <div class="stat-label">In Processing</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(22,163,74,0.12);color:var(--success)">
+              <i class="bi bi-check2-all"></i>
+            </div>
+            <div class="stat-number" style="color:var(--success)">128</div>
+            <div class="stat-label">Completed</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(225,29,72,0.1);color:var(--accent)">
+              <i class="bi bi-download"></i>
+            </div>
+            <div class="stat-number" style="color:var(--accent)">95</div>
+            <div class="stat-label">Downloaded</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ready to Process -->
+      <div id="readySection" class="animate-in delay-1">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h6 class="fw-bold mb-0"><i class="bi bi-file-earmark-check text-primary me-2"></i>Ready to Process</h6>
+          <div class="d-flex gap-2">
+            <input type="text" class="form-control form-control-sm" placeholder="Search..." style="width:200px;border-radius:8px">
+            <select class="form-select form-select-sm" style="width:140px;border-radius:8px">
+              <option>All</option>
+              <option>1st-Time</option>
+              <option>2nd-Time</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-custom">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Request ID</th>
+                <th>Student</th>
+                <th>Documents</th>
+                <th>Type</th>
+                <th>Finance</th>
+                <th>Clearance</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fw-bold">REQ-2026-0038</td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="avatar" style="width:30px;height:30px;font-size:0.7rem;background:var(--info)">AG</div>
+                    <div>
+                      <div class="fw-semibold">Ana Gonzales</div>
+                      <small class="text-muted">BSCS — HED</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <small>Diploma, TOR</small>
+                </td>
+                <td><span class="badge-custom badge-processing">1st-Time</span></td>
+                <td><span class="badge-custom badge-approved">✓ Paid</span></td>
+                <td><span class="badge-custom badge-approved">✓ 100%</span></td>
+                <td>
+                  <button class="btn-primary-custom btn-sm-custom" style="padding:6px 14px;font-size:0.8rem" data-bs-toggle="modal" data-bs-target="#uploadModal" onclick="setModalStudent('Ana Gonzales', 'REQ-2026-0038')">
+                    <i class="bi bi-upload"></i> Upload & Complete
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="fw-bold">REQ-2026-0035</td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="avatar" style="width:30px;height:30px;font-size:0.7rem;background:var(--success)">PC</div>
+                    <div>
+                      <div class="fw-semibold">Pedro Cruz</div>
+                      <small class="text-muted">BSEd — HED</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <small>Certificate of Enrollment</small>
+                </td>
+                <td><span class="badge-custom badge-pending">2nd-Time</span></td>
+                <td><span class="badge-custom badge-approved">✓ Paid</span></td>
+                <td><span class="text-muted" style="font-size:0.82rem">N/A</span></td>
+                <td>
+                  <button class="btn-primary-custom btn-sm-custom" style="padding:6px 14px;font-size:0.8rem" data-bs-toggle="modal" data-bs-target="#uploadModal" onclick="setModalStudent('Pedro Cruz', 'REQ-2026-0035')">
+                    <i class="bi bi-upload"></i> Upload & Complete
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="fw-bold">REQ-2026-0043</td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="avatar" style="width:30px;height:30px;font-size:0.7rem;background:var(--secondary)">MR</div>
+                    <div>
+                      <div class="fw-semibold">Maria Reyes</div>
+                      <small class="text-muted">BSBA — HED</small>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <small>Transcript of Records</small>
+                </td>
+                <td><span class="badge-custom badge-pending">2nd-Time</span></td>
+                <td><span class="badge-custom badge-approved">✓ Paid</span></td>
+                <td><span class="text-muted" style="font-size:0.82rem">N/A</span></td>
+                <td>
+                  <button class="btn-primary-custom btn-sm-custom" style="padding:6px 14px;font-size:0.8rem" data-bs-toggle="modal" data-bs-target="#uploadModal" onclick="setModalStudent('Maria Reyes', 'REQ-2026-0043')">
+                    <i class="bi bi-upload"></i> Upload & Complete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Completed Requests -->
+      <div id="completedSection" class="mt-4 animate-in delay-2">
+        <h6 class="fw-bold mb-3"><i class="bi bi-check2-all text-success me-2"></i>Recently Completed</h6>
+        <div class="table-custom">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Request ID</th>
+                <th>Student</th>
+                <th>Documents</th>
+                <th>Completed</th>
+                <th>Download Status</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fw-bold">REQ-2026-0030</td>
+                <td>Carlo Mendoza — BSIT</td>
+                <td><small>TOR, Certificate of Good Moral</small></td>
+                <td>Feb 12, 2026</td>
+                <td><span class="text-success fw-semibold" style="font-size:0.85rem"><i class="bi bi-download me-1"></i>Downloaded</span></td>
+                <td><span class="badge-custom badge-completed">Completed</span></td>
+              </tr>
+              <tr>
+                <td class="fw-bold">REQ-2026-0028</td>
+                <td>Lisa Tan — BSN</td>
+                <td><small>Diploma</small></td>
+                <td>Feb 11, 2026</td>
+                <td><span class="text-muted" style="font-size:0.85rem"><i class="bi bi-clock me-1"></i>Not yet downloaded</span></td>
+                <td><span class="badge-custom badge-completed">Completed</span></td>
+              </tr>
+              <tr>
+                <td class="fw-bold">REQ-2026-0025</td>
+                <td>Mark Aquino — BSHRM</td>
+                <td><small>Honorable Dismissal</small></td>
+                <td>Feb 10, 2026</td>
+                <td><span class="text-success fw-semibold" style="font-size:0.85rem"><i class="bi bi-download me-1"></i>Downloaded</span></td>
+                <td><span class="badge-custom badge-completed">Completed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upload Document Modal -->
+  <div class="modal fade modal-custom" id="uploadModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title fw-bold"><i class="bi bi-upload text-primary me-2"></i>Upload Final Document</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alert-custom mb-3" style="background:var(--primary-light);color:var(--primary)">
+            <i class="bi bi-person"></i>
+            <div>
+              <strong id="modalStudentName">Student Name</strong><br>
+              <small id="modalReqId">REQ-2026-XXXX</small>
+            </div>
+          </div>
+
+          <div class="form-custom">
+            <label class="form-label fw-bold">Upload Final PDF Document</label>
+            <div class="upload-area mb-3" onclick="document.getElementById('pdfInput').click()" style="padding:32px">
+              <i class="bi bi-file-earmark-pdf d-block" style="font-size:2rem"></i>
+              <div class="fw-semibold mb-1">Click to upload PDF</div>
+              <small class="text-muted">PDF only — Max 10MB</small>
+              <input type="file" id="pdfInput" class="d-none" accept=".pdf">
+            </div>
+
+            <label class="form-label fw-bold">Remarks (Optional)</label>
+            <textarea class="form-control" rows="3" placeholder="Any notes about the document..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-outline-custom btn-sm-custom" data-bs-dismiss="modal">Cancel</button>
+          <button class="btn-success-custom btn-sm-custom" data-bs-dismiss="modal" onclick="completeRequest()">
+            <i class="bi bi-check2-all"></i> Upload & Mark as Completed
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function setModalStudent(name, reqId) {
+      document.getElementById('modalStudentName').textContent = name;
+      document.getElementById('modalReqId').textContent = reqId;
+    }
+    function completeRequest() {
+      alert('Document uploaded and request marked as completed! Student can now download their document.');
+    }
+  </script>
+</body>
+</html>

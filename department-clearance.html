@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department Clearance — SORS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <a href="index.html"><h5><i class="bi bi-mortarboard-fill"></i> SORS</h5></a>
+      <small>Department Panel</small>
+    </div>
+    <div class="sidebar-section-title">Clearance</div>
+    <ul class="sidebar-menu">
+      <li><a href="department-clearance.html" class="active"><i class="bi bi-grid-1x2"></i> Dashboard</a></li>
+      <li><a href="#pendingClearance"><i class="bi bi-hourglass-split"></i> Pending Clearance <span class="notif-dot"></span></a></li>
+      <li><a href="#historySection"><i class="bi bi-clock-history"></i> History</a></li>
+    </ul>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section-title">Navigation</div>
+    <ul class="sidebar-menu">
+      <li><a href="student-dashboard.html"><i class="bi bi-person"></i> Student View</a></li>
+      <li><a href="finance-dashboard.html"><i class="bi bi-bank"></i> Finance View</a></li>
+      <li><a href="registrar-dashboard.html"><i class="bi bi-patch-check"></i> Registrar View</a></li>
+    </ul>
+    <div class="sidebar-divider"></div>
+    <ul class="sidebar-menu">
+      <li><a href="login.html"><i class="bi bi-box-arrow-left"></i> Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <div class="top-bar">
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn d-lg-none border-0" onclick="document.getElementById('sidebar').classList.toggle('show')">
+          <i class="bi bi-list fs-4"></i>
+        </button>
+        <h4><i class="bi bi-building text-primary me-2"></i>Department Clearance</h4>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <span class="badge-custom badge-processing">
+          <i class="bi bi-book me-1"></i> Library Department
+        </span>
+        <div class="avatar" style="background:var(--secondary)">LB</div>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <!-- Stats -->
+      <div class="row g-4 mb-4 animate-in">
+        <div class="col-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(245,158,11,0.12);color:#d97706">
+              <i class="bi bi-hourglass-split"></i>
+            </div>
+            <div class="stat-number" style="color:#d97706">5</div>
+            <div class="stat-label">Pending Review</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(22,163,74,0.12);color:var(--success)">
+              <i class="bi bi-check-circle"></i>
+            </div>
+            <div class="stat-number" style="color:var(--success)">32</div>
+            <div class="stat-label">Approved</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(220,38,38,0.1);color:var(--danger)">
+              <i class="bi bi-x-circle"></i>
+            </div>
+            <div class="stat-number" style="color:var(--danger)">2</div>
+            <div class="stat-label">Rejected</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(220,38,38,0.1);color:var(--primary)">
+              <i class="bi bi-people"></i>
+            </div>
+            <div class="stat-number" style="color:var(--primary)">39</div>
+            <div class="stat-label">Total This Month</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pending Clearance Requests -->
+      <div id="pendingClearance" class="animate-in delay-1">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h6 class="fw-bold mb-0"><i class="bi bi-hourglass-split text-warning me-2"></i>Pending Clearance Requests</h6>
+          <input type="text" class="form-control form-control-sm" placeholder="Search student..." style="width:220px;border-radius:8px">
+        </div>
+
+        <div class="table-custom">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Request ID</th>
+                <th>Student Name</th>
+                <th>Course</th>
+                <th>Level</th>
+                <th>Requestor</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fw-bold">REQ-2026-0042</td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="avatar" style="width:30px;height:30px;font-size:0.7rem">JS</div>
+                    Juan Santos
+                  </div>
+                </td>
+                <td>BSIT</td>
+                <td>HED</td>
+                <td><span class="badge-custom badge-processing">1st-Time</span></td>
+                <td><small>Feb 15, 2026</small></td>
+                <td>
+                  <div class="d-flex gap-1">
+                    <button class="btn-success-custom btn-sm-custom" style="padding:6px 12px;font-size:0.8rem" onclick="approveClearance(this)">
+                      <i class="bi bi-check-lg"></i> Approve
+                    </button>
+                    <button class="btn-danger-custom btn-sm-custom" style="padding:6px 12px;font-size:0.8rem" data-bs-toggle="modal" data-bs-target="#rejectModal">
+                      <i class="bi bi-x-lg"></i> Reject
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="fw-bold">REQ-2026-0044</td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="avatar" style="width:30px;height:30px;font-size:0.7rem;background:var(--accent)">KL</div>
+                    Kim Lee
+                  </div>
+                </td>
+                <td>BSN</td>
+                <td>HED</td>
+                <td><span class="badge-custom badge-processing">1st-Time</span></td>
+                <td><small>Feb 17, 2026</small></td>
+                <td>
+                  <div class="d-flex gap-1">
+                    <button class="btn-success-custom btn-sm-custom" style="padding:6px 12px;font-size:0.8rem" onclick="approveClearance(this)">
+                      <i class="bi bi-check-lg"></i> Approve
+                    </button>
+                    <button class="btn-danger-custom btn-sm-custom" style="padding:6px 12px;font-size:0.8rem" data-bs-toggle="modal" data-bs-target="#rejectModal">
+                      <i class="bi bi-x-lg"></i> Reject
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="fw-bold">REQ-2026-0045</td>
+                <td>
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="avatar" style="width:30px;height:30px;font-size:0.7rem;background:var(--success)">AC</div>
+                    Ana Cruz
+                  </div>
+                </td>
+                <td>BSBA</td>
+                <td>Masteral</td>
+                <td><span class="badge-custom badge-processing">1st-Time</span></td>
+                <td><small>Feb 17, 2026</small></td>
+                <td>
+                  <div class="d-flex gap-1">
+                    <button class="btn-success-custom btn-sm-custom" style="padding:6px 12px;font-size:0.8rem" onclick="approveClearance(this)">
+                      <i class="bi bi-check-lg"></i> Approve
+                    </button>
+                    <button class="btn-danger-custom btn-sm-custom" style="padding:6px 12px;font-size:0.8rem" data-bs-toggle="modal" data-bs-target="#rejectModal">
+                      <i class="bi bi-x-lg"></i> Reject
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Clearance History -->
+      <div id="historySection" class="mt-4 animate-in delay-2">
+        <h6 class="fw-bold mb-3"><i class="bi bi-clock-history text-primary me-2"></i>Recent History</h6>
+        <div class="table-custom">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Request ID</th>
+                <th>Student</th>
+                <th>Action</th>
+                <th>Date</th>
+                <th>Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fw-bold">REQ-2026-0038</td>
+                <td>Ana Gonzales</td>
+                <td><span class="badge-custom badge-approved">Approved</span></td>
+                <td>Feb 14, 2026</td>
+                <td class="text-muted">No outstanding library items</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">REQ-2026-0036</td>
+                <td>Carlos Dela Cruz</td>
+                <td><span class="badge-custom badge-rejected">Rejected</span></td>
+                <td>Feb 13, 2026</td>
+                <td class="text-danger">Unreturned book: "Data Structures" — Due: Jan 15</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">REQ-2026-0035</td>
+                <td>Pedro Cruz</td>
+                <td><span class="badge-custom badge-approved">Approved</span></td>
+                <td>Feb 13, 2026</td>
+                <td class="text-muted">Cleared</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reject Modal -->
+  <div class="modal fade modal-custom" id="rejectModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title fw-bold"><i class="bi bi-x-circle text-danger me-2"></i>Reject Clearance</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-custom">
+            <label class="form-label">Reason for Rejection</label>
+            <textarea class="form-control" rows="4" placeholder="Explain why the clearance is being rejected (e.g., unreturned items, missing forms)..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-outline-custom btn-sm-custom" data-bs-dismiss="modal">Cancel</button>
+          <button class="btn-danger-custom btn-sm-custom" data-bs-dismiss="modal" onclick="alert('Clearance rejected and student notified.')">
+            <i class="bi bi-x-lg"></i> Confirm Rejection
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function approveClearance(btn) {
+      const row = btn.closest('tr');
+      row.style.background = 'rgba(22,163,74,0.08)';
+      btn.closest('td').innerHTML = '<span class="badge-custom badge-approved">Approved ✓</span>';
+    }
+  </script>
+</body>
+</html>

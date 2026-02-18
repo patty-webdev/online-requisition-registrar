@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — SORS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="auth-page">
+    <div class="auth-card animate-in">
+      <div class="text-center mb-4">
+        <a href="index.html" class="d-inline-flex align-items-center gap-2 mb-3" style="font-weight:800;font-size:1.4rem;color:var(--primary)">
+          <i class="bi bi-mortarboard-fill"></i> SORS
+        </a>
+        <h3>Welcome Back</h3>
+        <p class="auth-subtitle">Sign in to continue to your dashboard</p>
+      </div>
+
+      <!-- Role Selection Tabs -->
+      <ul class="nav nav-pills nav-justified mb-4" id="roleTab">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="pill" href="#" onclick="selectRole('student')" style="border-radius:8px;font-weight:600;font-size:0.85rem">
+            <i class="bi bi-person"></i> Student
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#" onclick="selectRole('finance')" style="border-radius:8px;font-weight:600;font-size:0.85rem">
+            <i class="bi bi-bank"></i> Finance
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#" onclick="selectRole('department')" style="border-radius:8px;font-weight:600;font-size:0.85rem">
+            <i class="bi bi-building"></i> Dept
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="pill" href="#" onclick="selectRole('registrar')" style="border-radius:8px;font-weight:600;font-size:0.85rem">
+            <i class="bi bi-patch-check"></i> Registrar
+          </a>
+        </li>
+      </ul>
+
+      <form class="form-custom" onsubmit="handleLogin(event)">
+        <div class="mb-3">
+          <label class="form-label">Email Address</label>
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0" style="border:2px solid var(--gray-300);border-right:none;border-radius:8px 0 0 8px">
+              <i class="bi bi-envelope text-muted"></i>
+            </span>
+            <input type="email" class="form-control border-start-0" placeholder="you@email.com" style="border-left:none;border-radius:0 8px 8px 0" required>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0" style="border:2px solid var(--gray-300);border-right:none;border-radius:8px 0 0 8px">
+              <i class="bi bi-lock text-muted"></i>
+            </span>
+            <input type="password" class="form-control border-start-0" placeholder="••••••••" style="border-left:none;border-radius:0 8px 8px 0" required>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="remember">
+            <label class="form-check-label" for="remember" style="font-size:0.88rem">Remember me</label>
+          </div>
+          <a href="#" class="text-primary fw-semibold" style="font-size:0.88rem">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn-primary-custom w-100 justify-content-center">
+          <i class="bi bi-box-arrow-in-right"></i> Sign In
+        </button>
+      </form>
+
+      <div class="text-center mt-4">
+        <p style="font-size:0.9rem;color:var(--gray-600)">
+          Don't have an account? <a href="register.html" class="text-primary fw-semibold">Create Account</a>
+        </p>
+      </div>
+
+      <div class="text-center mt-2">
+        <a href="index.html" class="text-muted" style="font-size:0.85rem">
+          <i class="bi bi-arrow-left"></i> Back to Home
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let selectedRole = 'student';
+    function selectRole(role) { selectedRole = role; }
+    function handleLogin(e) {
+      e.preventDefault();
+      const routes = {
+        student: 'student-dashboard.html',
+        finance: 'finance-dashboard.html',
+        department: 'department-clearance.html',
+        registrar: 'registrar-dashboard.html'
+      };
+      window.location.href = routes[selectedRole];
+    }
+  </script>
+</body>
+</html>
